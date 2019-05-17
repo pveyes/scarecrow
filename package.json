@@ -1,0 +1,24 @@
+{
+  "name": "scarecrow",
+  "version": "1.0.0",
+  "description": "Tanifund scraper & notification service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pveyes/scarecrow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pveyes/scarecrow/issues"
+  },
+  "homepage": "https://github.com/pveyes/scarecrow#readme",
+  "dependencies": {
+    "@octokit/rest": "^16.25.6",
+    "axios": "^0.18.0"
+  }
+}
