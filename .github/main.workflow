@@ -1,5 +1,5 @@
-workflow "scrape every hour" {
-  on = "schedule(0 */1 * * *)"
+workflow "scrape every 15 mins" {
+  on = "schedule(*/15 * * * *)"
   resolves = ["send notification"]
 }
 
