@@ -1,0 +1,21 @@
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+name: scrape every 15 mins
+jobs:
+  installDeps:
+    name: install deps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: install deps
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        with:
+          args: ci
+      - name: send notification
+        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          args: start
