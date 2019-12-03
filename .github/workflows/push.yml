@@ -5,15 +5,15 @@ jobs:
     name: install deps
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: install deps
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          args: ci
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: install deps
+        run: npm ci 
       - name: send notification
-        uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+        run: npm start
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-          args: start
