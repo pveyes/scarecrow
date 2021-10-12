@@ -19,6 +19,6 @@
   "homepage": "https://github.com/pveyes/scarecrow#readme",
   "dependencies": {
     "@octokit/rest": "^16.25.6",
-    "axios": "^0.21.1"
+    "axios": "^0.21.2"
   }
 }
